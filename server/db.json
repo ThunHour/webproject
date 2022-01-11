@@ -1,12 +1,9 @@
 {
   "vehicleRepository": [
     {
-      "id": "213"
-    },
-    {
-      "id": "22",
-      "Model": "2222cvsd",
-      "Price": "3213"
+      "id": "213",
+      "Model": "hour",
+      "Price": "5000"
     },
     {
       "id": "1234",
@@ -50,6 +47,16 @@
     },
     {
       "id": "fDMhxco"
+    },
+    {
+      "id": "23123",
+      "Model": "weqw",
+      "Price": ""
+    },
+    {
+      "id": "222",
+      "Model": "32hsk3321",
+      "Price": ""
     }
   ]
 }

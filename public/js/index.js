@@ -1,16 +1,24 @@
 function addRecord() {
+  var newId=document.getElementById("id").value
+  var newModel=document.getElementById("model").value
+  var newPrice=document.getElementById("price").value
   let record = {
-    id: document.getElementById("id").value,
-    Model: document.getElementById("model").value,
-    Price: document.getElementById("price").value,
+    id: newId,
+    Model:newModel,
+    Price:newPrice,
   };
-  fetch("http://localhost:3000/vehicleRepository", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(record),
-  }).then((data) => {
-    console.log(data);
-  });
+  if (newModel==undefined && newPrice==undefined ||newModel==undefined ||newPrice==undefined){
+    alert("Insert must be full forms that has available input !!....")
+  }else{
+    fetch("http://localhost:3000/vehicleRepository", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(record),
+    }).then((data) => {
+      console.log(data);
+    });
+  }
+
   document.forms[0].reset();
 }
 
@@ -67,8 +75,8 @@ function updateRecord() {
 
         });
       }
+
     );
-    // document.forms[0].reset();
   }
 }
 
@@ -168,7 +176,7 @@ function findById(proID) {
   document.forms[0].reset();
 }
 function findByModel(proModel) {
-  fetch("http://localhost:3000/vehicleRepository?Price=" + proModel).then(
+  fetch("http://localhost:3000/vehicleRepository?Model=" + proModel).then(
     (data) => {
       data.json().then((jsonData) => {
         if (jsonData[0] != undefined) {
