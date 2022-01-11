@@ -1,9 +1,7 @@
 {
   "vehicleRepository": [
     {
-      "id": "213",
-      "Model": "32hsk3321",
-      "Price": "123"
+      "id": "213"
     },
     {
       "id": "22",
@@ -49,6 +47,9 @@
       "id": "123124124",
       "Model": "32hsk33211",
       "Price": "400"
+    },
+    {
+      "id": "fDMhxco"
     }
   ]
 }
