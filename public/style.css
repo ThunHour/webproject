@@ -1,0 +1,74 @@
+
+.navbar{
+    background-color: #8685EF;
+}
+.navbar h1{
+    align-items: center;
+}
+h1{
+    align-items: center;
+    padding: 5px;
+}
+
+h3{
+    position: relative;
+    text-align: center;
+}
+
+body{
+    background-attachment: fixed;
+    background: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+    width: static;
+    height: 500px;
+
+}
+main{
+    padding: 20px;
+    background: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+}
+.card-body{
+    background-color: #E3E0F3;
+}
+
+.wrapper .button{
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    float: left;
+    margin: 0 5px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background: #8685EF;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-out;
+}
+.wrapper .button:hover{
+    width: 160px;
+}
+.wrapper .button .icon{
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 60px;
+}
+.wrapper .button .icon i{
+    font-size: 25px;
+    line-height: 60px;
+}
+.wrapper .button span{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-left: 10px;
+    
+}
+
+
+.form-control{
+    border-radius: 20px;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Vehicle</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
+    <script src="./js/index.js"></script>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>Vehicle Repository</h1>
+        </nav>
+    </header>
+    <main>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card"> 
+                    <div class="card-body">
+                        <h3>Fill in This</h3> <br>
+                        <div class="input-group mb-3">
+                            <input type="number" name="id" id="id" class="form-control" placeholder="ID" aria-label="id" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" name="model" id="model" class="form-control" placeholder="Model" aria-label="type" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="number" name="price" id="price" class="form-control" placeholder="Price" aria-label="brand" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                </div>
+                <div class="wrapper"><br>
+                    <div class="button" onclick="addRecord()">
+                        <div class="icon"><i class="fas fa-plus-circle"></i></div>
+                        <span>Insert</span>
+                    </div>
+                    <div class="button" onclick="updateRecord()">
+                        <div class="icon"><i class="fa fa-edit"></i></div>
+                        <span>Update</span>
+                    </div>
+                    <div class="button" onclick="deleteRecord()">
+                        <div class="icon"><i class="fas fa-trash-alt"></i></div>
+                        <span>Delete</span>
+                    </div>
+                    <div class="button" onclick="findRecord()">
+                        <div class="icon"><i class="fas fa-search"></i></div>
+                        <span>Find</span>
+                    </div>
+                </div>
+                    
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table" id="show">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Model</th>
+                                    <th scope="col">Price</th>
+                                </tr>
+                            </thead>
+                            <tbody id="data">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
