@@ -1,0 +1,39 @@
+.header{
+    text-align: center;
+}
+.navbar{
+    background-color: #8685EF;
+}
+.navbar h1{
+    align-items: center;
+}
+h1{
+    align-items: center;
+    padding: 5px;
+}
+
+h3{
+    position: relative;
+    text-align: center;
+}
+
+body{
+    background-attachment: fixed;
+    background-color: white;
+    width: static;
+    height: 500px;
+}
+main{
+    padding: 20px;
+}
+.card-body{
+    background-color: #E3E0F3;
+}
+
+.button{
+    background-color: #8685EF;
+    border-radius: 50px;
+}
+.form-control{
+    border-radius: 20px;
+}
