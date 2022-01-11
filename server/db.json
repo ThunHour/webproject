@@ -1,0 +1,54 @@
+{
+  "vehicleRepository": [
+    {
+      "id": "213",
+      "Model": "32hsk3321",
+      "Price": "123"
+    },
+    {
+      "id": "22",
+      "Model": "2222cvsd",
+      "Price": "3213"
+    },
+    {
+      "id": "1234",
+      "Model": "afa",
+      "Price": "31222"
+    },
+    {
+      "id": "231",
+      "Model": "asdaasdasd",
+      "Price": "313213"
+    },
+    {
+      "id": "123",
+      "Model": "",
+      "Price": ""
+    },
+    {
+      "id": "44",
+      "Model": "32hsk3321",
+      "Price": "2412"
+    },
+    {
+      "id": "13",
+      "Model": "hour",
+      "Price": "200"
+    },
+    {
+      "id": "19",
+      "Model": "hour",
+      "Price": "5000"
+    },
+    {
+      "id": "3443124",
+      "Model": "32hsk3321",
+      "Price": "400"
+    },
+    {
+      "id": "123124124",
+      "Model": "32hsk33211",
+      "Price": "400"
+    }
+  ]
+}
