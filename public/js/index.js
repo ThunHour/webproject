@@ -1,15 +1,23 @@
 function addRecord() {
-  var newId=document.getElementById("id").value
-  var newModel=document.getElementById("model").value
-  var newPrice=document.getElementById("price").value
+  var newId = document.getElementById("id").value;
+  var newModel = document.getElementById("model").value;
+  var newPrice = document.getElementById("price").value;
   let record = {
     id: newId,
-    Model:newModel,
-    Price:newPrice,
+    Model: newModel,
+    Price: newPrice,
   };
-  if (newModel==undefined && newPrice==undefined ||newModel==undefined ||newPrice==undefined){
-    alert("Insert must be full forms that has available input !!....")
-  }else{
+  if (
+    (newModel == "" && newPrice == "" && newId == "") ||
+    (newModel != "" && newPrice == "" && newId == "") ||
+    (newModel == "" && newPrice != "" && newId == "") ||
+    (newModel == "" && newPrice == "" && newId != "") ||
+    (newModel != "" && newPrice != "" && newId == "") ||
+    (newModel != "" && newPrice == "" && newId != "") ||
+    (newModel == "" && newPrice != "" && newId != "") 
+  ) {
+    alert("Insert must be full forms that has available input !!....");
+  } else {
     fetch("http://localhost:3000/vehicleRepository", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -32,50 +40,48 @@ function updateRecord() {
         res.json().then((data) => {
           var model = document.getElementById("model").value;
           var price = document.getElementById("price").value;
-          if (model != '' && price != '') {
+          if (model != "" && price != "") {
             let record = {
-              id:idOfUpdate,
-              Model:model,
-              Price:price,
-            }
+              id: idOfUpdate,
+              Model: model,
+              Price: price,
+            };
             fetch("http://localhost:3000/vehicleRepository/" + idOfUpdate, {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(record),
-          }).then((jSonData) => {
-            console.log(jSonData);
-          });
-          } else if (model == '' && price != '') {
+              method: "PUT",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(record),
+            }).then((jSonData) => {
+              console.log(jSonData);
+            });
+          } else if (model == "" && price != "") {
             let record = {
-              id:idOfUpdate,
-              Model:data.Model,
-              Price:price,
-            }
+              id: idOfUpdate,
+              Model: data.Model,
+              Price: price,
+            };
             fetch("http://localhost:3000/vehicleRepository/" + idOfUpdate, {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(record),
-          }).then((jSonData) => {
-            console.log(jSonData);
-          });
-          } else if (model != '' && price == '') {
+              method: "PUT",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(record),
+            }).then((jSonData) => {
+              console.log(jSonData);
+            });
+          } else if (model != "" && price == "") {
             let record = {
-              id:idOfUpdate,
-              Model:model,
-              Price:data.Price,
-            }
+              id: idOfUpdate,
+              Model: model,
+              Price: data.Price,
+            };
             fetch("http://localhost:3000/vehicleRepository/" + idOfUpdate, {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(record),
-          }).then((jSonData) => {
-            console.log(jSonData);
-          });
+              method: "PUT",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(record),
+            }).then((jSonData) => {
+              console.log(jSonData);
+            });
           }
-
         });
       }
-
     );
   }
 }

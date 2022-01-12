@@ -1,62 +1,24 @@
 {
   "vehicleRepository": [
     {
-      "id": "213",
-      "Model": "hour",
-      "Price": "5000"
-    },
-    {
-      "id": "1234",
-      "Model": "afa",
-      "Price": "31222"
-    },
-    {
-      "id": "231",
-      "Model": "asdaasdasd",
-      "Price": "313213"
-    },
-    {
       "id": "123",
-      "Model": "",
-      "Price": ""
-    },
-    {
-      "id": "44",
-      "Model": "32hsk3321",
-      "Price": "2412"
-    },
-    {
-      "id": "13",
       "Model": "hour",
-      "Price": "200"
+      "Price": "50000000000"
     },
     {
-      "id": "19",
-      "Model": "hour",
-      "Price": "5000"
+      "id": "12342",
+      "Model": "asda",
+      "Price": "12312"
     },
     {
-      "id": "3443124",
+      "id": "213",
       "Model": "32hsk3321",
-      "Price": "400"
+      "Price": "45243"
     },
     {
-      "id": "123124124",
-      "Model": "32hsk33211",
-      "Price": "400"
-    },
-    {
-      "id": "fDMhxco"
-    },
-    {
-      "id": "23123",
-      "Model": "weqw",
-      "Price": ""
-    },
-    {
-      "id": "222",
-      "Model": "32hsk3321",
-      "Price": ""
+      "id": "2312",
+      "Model": "dwadaw",
+      "Price": "34523432"
     }
   ]
 }
