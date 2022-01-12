@@ -32,7 +32,6 @@ body{
     background: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
     width: static;
     height: 500px;
-
 }
 main{
     padding: 20px;
@@ -57,7 +56,7 @@ main{
     transition: all 0.3s ease-out;
 }
 .wrapper .button:hover{
-    width: 160px;
+    width: 160px!important;
 }
 .wrapper .button .icon{
     display: inline-block;
@@ -73,7 +72,7 @@ main{
     font-size: 25px;
     line-height: 60px;
 }
-.wrapper .button span{
+.wrapper .button,span{
     font-size: 20px;
     font-weight: 500;
     line-height: 60px;
@@ -91,10 +90,26 @@ table{
 }
 .form-control{
     border-radius: 20px;
+    color: black!important;
+}
+#data>tr{
+    color:#49484b;
+   font-size: 15px;
 }
 #data>tr:nth-child(even){
     background-color:#C6C0F8;
 }
 #data>tr:hover{
     background-color:#e4d4b8;
+}
+#dropdownMenu2{
+    background-color:#8685EF;
+    color: #fff!important;
+}
+.dropdown-item{
+    color: rgb(71, 66, 66)!important;
+}
+ul li:hover{
+    background-color: black!important;
+
 }

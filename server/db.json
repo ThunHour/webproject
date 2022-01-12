@@ -2,7 +2,7 @@
   "vehicleRepository": [
     {
       "id": "123",
-      "Model": "hour",
+      "Model": "32hsk3321",
       "Price": "50000000000"
     },
     {
@@ -19,6 +19,21 @@
       "id": "2312",
       "Model": "dwadaw",
       "Price": "34523432"
+    },
+    {
+      "id": "34123",
+      "Model": "32hsk3321",
+      "Price": "23231"
+    },
+    {
+      "id": "3213",
+      "Model": "213",
+      "Price": "123123"
+    },
+    {
+      "id": "1233",
+      "Model": "eqwe",
+      "Price": "123123"
     }
   ]
 }

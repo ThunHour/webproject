@@ -160,8 +160,9 @@ function findRecord() {
     model.value.length == 0 &&
     price.value.length > 0
   ) {
-    findByModel(document.getElementById("price").value);
+    findByPrice(document.getElementById("price").value);
   }
+  document.forms[0].reset();
 }
 function findById(proID) {
   fetch("http://localhost:3000/vehicleRepository/" + proID).then((data) => {
@@ -225,7 +226,8 @@ function findByPrice(proPrice) {
   );
   document.forms[0].reset();
 }
-fetch("http://localhost:3000/vehicleRepository").then((res) => {
+function reviewAll(){
+  fetch("http://localhost:3000/vehicleRepository").then((res) => {
   res.json().then((data) => {
     console.log(data);
     if (data.length > 0) {
@@ -241,3 +243,103 @@ fetch("http://localhost:3000/vehicleRepository").then((res) => {
     }
   });
 });
+}
+function modelSort(){
+  fetch("http://localhost:3000/vehicleRepository?_sort=Model").then (res => {
+    res.json().then(
+        data => {
+            console.log(data)
+            if(data.length > 0) {
+                var temp = "";
+                data.forEach((info) => {
+                    temp += "<tr>";
+                    temp += "<td>" + info.id+ "</td>";
+                    temp += "<td>" + info.Model+ "</td>";
+                    temp += "<td>" + info.Price+ "</td>"
+                    temp += "</tr>";
+                })
+                document.getElementById("data").innerHTML = temp;
+            }
+        }
+    )
+})
+}
+function defaults(){
+  fetch("http://localhost:3000/vehicleRepository").then((res) => {
+  res.json().then((data) => {
+    if (data.length > 0) {
+      var temp = "";
+      data.forEach((info) => {
+        temp += "<tr>";
+        temp += "<td>" + info.id + "</td>";
+        temp += "<td>" + info.Model + "</td>";
+        temp += "<td>" + info.Price + "</td>";
+        temp += "</tr>";
+      });
+      document.getElementById("data").innerHTML = temp;
+    }
+  });
+});
+}
+function priceSort(){
+  fetch("http://localhost:3000/vehicleRepository").then (res => {
+    res.json().then(
+        data => {
+          const sortedResponse = data.sort(function(a, b) {
+            return parseInt(a.Price) - parseInt(b.Price)
+         });
+            if(sortedResponse.length > 0) {
+                var temp = "";
+                sortedResponse.forEach((info) => {
+                    temp += "<tr>";
+                    temp += "<td>" + info.id+ "</td>";
+                    temp += "<td>" + info.Model+ "</td>";
+                    temp += "<td>" + info.Price+ "</td>"
+                    temp += "</tr>";
+                })
+                document.getElementById("data").innerHTML = temp;
+            }
+        }
+    )
+})
+}
+function idSort(){
+  fetch("http://localhost:3000/vehicleRepository").then (res => {
+    res.json().then(
+        data => {
+          const sortedResponse = data.sort(function(a, b) {
+            return parseInt(a.id) - parseInt(b.id)
+         });
+            if(sortedResponse.length > 0) {
+                var temp = "";
+                sortedResponse.forEach((info) => {
+                    temp += "<tr>";
+                    temp += "<td>" + info.id+ "</td>";
+                    temp += "<td>" + info.Model+ "</td>";
+                    temp += "<td>" + info.Price+ "</td>"
+                    temp += "</tr>";
+                })
+                document.getElementById("data").innerHTML = temp;
+            }
+        }
+    )
+})
+}
+fetch("http://localhost:3000/vehicleRepository").then((res) => {
+  res.json().then((data) => {
+    
+    if (data.length > 0) {
+      var temp = "";
+      data.forEach((info) => {
+        temp += "<tr>";
+        temp += "<td>" + info.id + "</td>";
+        temp += "<td>" + info.Model + "</td>";
+        temp += "<td>" + info.Price + "</td>";
+        temp += "</tr>";
+      });
+      document.getElementById("data").innerHTML = temp;
+    }
+  });
+});
+
+
