@@ -1,35 +1,41 @@
 function addRecord() {
-  var newId = document.getElementById("id").value;
-  var newModel = document.getElementById("model").value;
-  var newPrice = document.getElementById("price").value;
-  let record = {
-    id: newId,
-    Model: newModel,
-    Price: newPrice,
-  };
-  if (
-    (newModel == "" && newPrice == "" && newId == "") ||
-    (newModel != "" && newPrice == "" && newId == "") ||
-    (newModel == "" && newPrice != "" && newId == "") ||
-    (newModel == "" && newPrice == "" && newId != "") ||
-    (newModel != "" && newPrice != "" && newId == "") ||
-    (newModel != "" && newPrice == "" && newId != "") ||
-    (newModel == "" && newPrice != "" && newId != "")
-  ) {
-    alert("Insert must be full forms that has available input !!....");
-  } else if (fetch("http://localhost:3000/vehicleRepository/" + newId)) {
-    alert("This ID have already added to the vehicle repository !!!!......");
-  } else {
-    fetch("http://localhost:3000/vehicleRepository", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(record),
-    }).then((data) => {
-      console.log(data);
-    });
+  let id = document.getElementById("id").value.trim();
+  let model = document.getElementById("model").value.trim();
+  let price = document.getElementById("price").value.trim();
+
+  if (id.length != 0 && model.length != 0 && price.length != 0 ) {
+      fetch("http://localhost:3000/vehicleRepository").then(
+          res => {
+              res.json().then(data => {
+                  data.forEach((d) => {
+                      if (d.id == id) {
+                          alert("The ID is already existed!");
+                      }
+                  })
+                  var record = {
+                      "id": id.trim(),
+                      "Model": model,
+                      "Price": price,
+                  }
+
+                  fetch("http://localhost:3000/vehicleRepository", {
+                      method: "POST",
+                      headers: {
+                          "Content-Type": "application/json",
+                      },
+                      body: JSON.stringify(record)
+                  })
+              })
+          }
+      )
+  
+     
+  }
+  else {
+      alert("Fields cannot be empty!")
+    
   }
 
-  document.forms[0].reset();
 }
 
 function updateRecord() {
@@ -119,24 +125,6 @@ function deleteRecord() {
       headers: { "Content-Type": "application/json" },
     });
   }
-}
-function viewRecord() {
-  fetch("http://localhost:3000/vehicleRepository").then((res) => {
-    res.json().then((data) => {
-      console.log(data);
-      if (data.length > 0) {
-        var temp = "";
-        data.forEach((info) => {
-          temp += "<tr>";
-          temp += "<td>" + info.id + "</td>";
-          temp += "<td>" + info.Model + "</td>";
-          temp += "<td>" + info.Price + "</td>";
-          temp += "</tr>";
-        });
-        document.getElementById("data").innerHTML = temp;
-      }
-    });
-  });
 }
 function findRecord() {
   if (
@@ -245,6 +233,7 @@ function reviewAll() {
       }
     });
   });
+  document.forms[0].reset();
 }
 function modelSort() {
   fetch("http://localhost:3000/vehicleRepository?_sort=Model").then((res) => {
